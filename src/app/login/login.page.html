@@ -1,0 +1,72 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Log In</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <div class="bg-img">
+    <ion-slides pager="true" [options]="slideOpts">
+      <ion-slide>
+        <ion-img src="../../assets//auth.png" ></ion-img>
+      </ion-slide>
+    </ion-slides>
+    <form class="form" [formGroup]="validations_form" (ngSubmit)="loginUser(validations_form.value)">
+      <ion-grid>
+        <ion-row color="primary" justify-content-center>
+          <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+            <div>
+              
+                <ion-item class="example-full-width">
+                  <ion-label>Email</ion-label>
+                   <ion-input formControlName="email" required></ion-input>
+                </ion-item>
+                <div class="validation-errors">
+                  <ng-container *ngFor="let validation of validation_messages.email">
+                    <div class="error-message"
+                      *ngIf="validations_form.get('email').hasError(validation.type) && (validations_form.get('email').dirty || validations_form.get('email').touched)">
+                      {{ validation.message }}
+                    </div>
+                  </ng-container>
+                </div>
+
+                <ion-item class="example-full-width">
+                  <ion-label>Password</ion-label>
+                   <ion-input type="password" formControlName="password" class="form-controll" required></ion-input>
+                </ion-item>
+                <div class="validation-errors">
+                  <ng-container *ngFor="let validation of validation_messages.password">
+                    <div class="error-message"
+                      *ngIf="validations_form.get('password').hasError(validation.type) && (validations_form.get('password').dirty || validations_form.get('password').touched)">
+                      {{ validation.message }}
+                    </div>
+                  </ng-container>
+                </div>
+                <div padding >
+                  <ion-button type="submit" class="connexion " [disabled]="!validations_form.valid" >SIGN IN</ion-button>
+                  <label class="error-message">{{errorMessage}}</label>
+                </div>
+                <div class="flex-container">
+                  <div padding  >
+                    <a routerLink="/register">
+                    <ion-button type="submit" class="inscription" >REGISTER</ion-button>
+                    </a>
+                 </div>
+                  <div padding >
+                    <a routerLink="/forget-password">
+                    <ion-button type="oublier"  class="oublier">FORGET PASSWORD
+                     
+
+                    </ion-button>
+                    </a>
+                  </div>
+                </div>
+              
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </form>
+ </div>
+
+</ion-content>

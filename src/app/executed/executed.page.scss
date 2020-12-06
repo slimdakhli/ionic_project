@@ -1,0 +1,27 @@
+.todo {
+    padding : 1px;
+    height: 100%;
+    width: 100%;
+    background-image: url('../../assets//todo.jpg');
+    background-size: cover;
+  }
+  .flex-container {
+    display: flex;
+  }
+  .footer{
+    height: 40px;
+  }
+  .bback{
+    --background: #bbb;
+    width: 50%;
+  }
+  .flex-container {
+    display: flex;
+  }
+  .back{
+      width: 30px;
+      height: 30px;
+  }
+  .beback{
+    --background: #bbb;
+  }
