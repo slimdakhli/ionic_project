@@ -31,20 +31,27 @@ export class HomePage implements OnInit{
       } else {
         this.navCtrl.navigateBack('');
       }
+
     }, err => {
       console.log('err', err);
     })
     this.getTasks();
   }
   logout() {
+
     this.authService.logoutUser()
       .then(res => {
         console.log(res);
-        this.navCtrl.navigateBack('');
+        this.navCtrl.navigateForward('/login');
+
+
       })
       .catch(error => {
+
         console.log(error);
+
       })
+
   }
 
   addNewTask() {

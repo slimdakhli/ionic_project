@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
+import { NavController } from '@ionic/angular';
+
 
 @Injectable({
   providedIn: 'root'
@@ -42,6 +44,7 @@ export class AuthenticateService {
           });
       }
     })
+
   }
 
   userDetails() {

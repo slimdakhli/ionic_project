@@ -76,7 +76,8 @@ export class ExecutedPage implements OnInit {
     this.authService.logoutUser()
       .then(res => {
         console.log(res);
-        this.navCtrl.navigateBack('');
+        this.navCtrl.navigateForward('/login');
+
       })
       .catch(error => {
         console.log(error);

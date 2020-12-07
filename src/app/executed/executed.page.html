@@ -1,14 +1,17 @@
 <ion-header>
   <ion-toolbar>
     <div class="flex-container">
-      <ion-button class="beback">
-        <a routerLink="/login">
+      <ion-title>executed</ion-title>
+      <a routerLink="/login">
 
-        <ion-icon name="exit" class="back" ></ion-icon>
-      </a>
-    </ion-button>
+        <ion-button class="beback" (click)="logout()">
+          
+            <ion-icon name="exit-outline" class="back" ></ion-icon>
+         
+        </ion-button>
+        </a>
+      
     </div>
-    <ion-title>executed</ion-title>
   </ion-toolbar>
 </ion-header>
 
